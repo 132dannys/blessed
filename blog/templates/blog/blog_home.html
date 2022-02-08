@@ -1,0 +1,26 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    Мой Блог
+{% endblock %}
+
+{% block content %}
+    <div class="features">
+        <h1>Блог</h1>
+        {% if posts %}
+            {% for el in posts %}
+               <div class="alert alert-warning">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.anons }}</p>
+                    <a href=" {% url 'blog-detail' el.id %} " class="btn btn-warning">Читать детальнее</a>
+               </div>
+            {% endfor %}
+        {% else %}
+            <p>Постов нет</p>
+        {% endif %}
+    {# comment #}
+    </div>
+{% endblock %}
+
+
+
