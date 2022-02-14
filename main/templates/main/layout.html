@@ -20,7 +20,9 @@
             <a href="{% url 'about' %}"><li>Про нас</li></a>
             <a href=""><li>Контакты</li></a>
             <a href="{% url 'blog_home' %}"><li>Блог</li></a>
+            {% if user.is_authenticated %}
             <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i>Добавить запись</button></li></a>
+            {% endif %}
         </ul>
         
     </aside>
